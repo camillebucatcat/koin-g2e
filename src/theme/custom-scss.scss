@@ -1,0 +1,176 @@
+@import "../theme/display.scss";
+$sizes: 10, 12, 14, 16, 18, 20, 22, 24, 25, 26, 28, 30, 34, 36, 40, 48, 50, 75, 180;
+$weights: 300, 400, 500, 600, 700, 800;
+$amount: 0 0, 1 0.25, 2 0.5, 3 1, 4 1.5, 5 3, auto auto;
+$colors: primary, secondary, danger, success, medium, dark, light;
+
+a {
+  text-decoration: none;
+}
+
+.d-flex { display: flex; }
+.align-center { align-items: center; }
+.align-self-end { align-self: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.flex-center-center { @include flex-center-center; }
+.flex-start-center { @include flex-start-center; }
+.flex-center-end { @include flex-center-end; }
+.flex-center-between { @include flex-center-between; }
+.flex-end-between { @include flex-end-between; }
+.flex-center { @include flex-center; }
+.flex-start { @include flex-start; }
+.flex-end { @include flex-end; }
+.flex--end { @include flex--end; }
+.flex-stretch { @include flex-stretch; }
+.flex-column { @include flex-column; }
+.inline-block { display: inline-block!important; }
+
+.v-middle { vertical-align: middle; }
+.bg-dark {
+  background-color: #000000;
+}
+
+.bg-primary {
+   --background: var(--ion-color-primary)!important;
+   background: var(--ion-color-primary)!important;
+}
+
+.bg-light {
+   --background: var(--ion-color-light)!important;
+   background: var(--ion-color-light)!important;
+}
+
+.bg-light-100 {
+   --background: #ffffff!important;
+   background: #ffffff!important;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.fullscreen {
+  padding-top: var(--ion-safe-area-top, 20px)!important;
+}
+
+.border-top {
+  border-top: 1px solid #EFEFEF;
+}
+
+.lg-text {
+  color: var(--ion-color-primary);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.md-text {
+  color: var(--ion-color-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.text-pending {
+  color: #f1a266;
+}
+
+.leading-2 {
+  line-height: 1.5;
+}
+
+
+@each $color in $colors {
+  .text-#{$color} {
+    color: var(--ion-color- + $color)!important; 
+  }
+}
+
+@each $name, $size in $amount {
+  .m-#{$name} {
+    margin: $size + rem !important;
+  }
+}
+
+@each $name, $size in $amount {
+  .mt-#{$name},
+  .my-#{$name} {
+    margin-top: $size + rem !important;
+  }
+}
+
+
+@each $name, $size in $amount {
+  .mb-#{$name},
+  .my-#{$name} {
+    margin-bottom: $size + rem !important;
+  }
+}
+
+@each $name, $size in $amount {
+  .mr-#{$name},
+  .mx-#{$name} {
+    margin-right: $size + rem !important;
+  }
+}
+
+@each $name, $size in $amount {
+  .ml-#{$name},
+  .mx-#{$name} {
+    margin-left: $size + rem !important;
+  }
+}
+
+@each $name, $size in $amount {
+  .p-#{$name} {
+    padding: $size + rem !important;
+  }
+}
+
+@each $name, $size in $amount {
+  .pt-#{$name},
+  .py-#{$name} {
+    padding-top: $size + rem !important;
+  }
+}
+
+
+@each $name, $size in $amount {
+  .pb-#{$name},
+  .py-#{$name} {
+    padding-bottom: $size + rem!important;
+  }
+}
+
+@each $name, $size in $amount {
+  .pr-#{$name},
+  .px-#{$name} {
+    padding-right: $size + rem !important;
+    --padding-end: $size + rem !important;
+  }
+}
+
+@each $name, $size in $amount {
+  .pl-#{$name},
+  .px-#{$name} {
+    padding-left: $size + rem !important;
+    --padding-start: $size + rem !important;
+  }
+}
+
+@each $size in $sizes {
+  .fs-#{$size} {
+    font-size: $size + px!important;
+  }
+}
+
+@each $weight in $weights {
+  .fw-#{$weight} {
+    font-weight: $weight;
+  }
+}
+
+@each $size in $sizes {
+  .icon-#{$size} {
+    width: $size + px;
+  }
+}
