@@ -1,0 +1,7 @@
+{
+  "name": "koin-g2e",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
